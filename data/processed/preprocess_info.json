@@ -1,0 +1,11 @@
+{
+  "min_months_for_cell_annual_mean": 9,
+  "years": [
+    1880,
+    2025
+  ],
+  "dropped_partial_years": [
+    2026
+  ],
+  "netcdf_history": "Created 2026-10-22 14:38:23 by SBBX_to_nc 2.0 - ILAND=1200, IOCEAN=NCDC/ER5, Base: 1951-1980"
+}

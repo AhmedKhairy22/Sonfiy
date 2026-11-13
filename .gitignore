@@ -1,0 +1,7 @@
+node_modules/
+dist/
+data/raw/**/*.nc
+data/processed/*.npz
+__pycache__/
+dist-artifact/
+tsconfig.tsbuildinfo

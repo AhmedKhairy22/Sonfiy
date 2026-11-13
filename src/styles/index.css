@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+/* Layout concept: one dark stage, the data visual in the middle, a slim player docked at the bottom. */
+@theme {
+  --color-bg: #080E19;        /* deep navy */
+  --color-surface: #142536;   /* midnight blue */
+  --color-raised: #1B3247;
+  --color-line: #24384D;
+  --color-teal: #65D9C4;      /* signal teal: water, cooler, "normal" */
+  --color-amber: #E9A66A;     /* solar amber: warmer than normal */
+  --color-ink: #F1F5F9;       /* light text */
+  --color-muted: #94A3B8;     /* muted text */
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+:root { color-scheme: dark; }
+html, body, #root { min-height: 100%; }
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; letter-spacing: -0.01em; }
+:focus-visible { outline: 3px solid var(--color-teal); outline-offset: 3px; border-radius: 8px; }
+.tabular { font-variant-numeric: tabular-nums; }
+.sr-only-focusable:not(:focus) { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+/* sliders */
+input[type="range"] { appearance: none; background: transparent; width: 100%; cursor: pointer; margin: 0; }
+input[type="range"]::-webkit-slider-runnable-track { height: 4px; border-radius: 999px; background: var(--fill, var(--color-line)); }
+input[type="range"]::-moz-range-track { height: 4px; border-radius: 999px; background: var(--fill, var(--color-line)); }
+input[type="range"]::-webkit-slider-thumb { appearance: none; width: 16px; height: 16px; margin-top: -6px; border-radius: 50%; background: var(--color-ink); box-shadow: 0 0 0 4px rgb(101 217 196 / 0.25); }
+input[type="range"]::-moz-range-thumb { width: 16px; height: 16px; border: 0; border-radius: 50%; background: var(--color-ink); }
+
+/* the note that is sounding pulses gently */
+@keyframes ring { from { r: 6; opacity: .9 } to { r: 22; opacity: 0 } }
+.note-ring { animation: ring 0.9s ease-out infinite; }
+@keyframes drift { from { transform: translateX(0) } to { transform: translateX(-200px) } }
+.wave-drift { animation: drift 6s linear infinite; }
+.wave-drift-slow { animation: drift 11s linear infinite reverse; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+}

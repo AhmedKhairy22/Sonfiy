@@ -1,0 +1,19 @@
+{
+  "dataset": "Global Mean Sea Level Trend from Integrated Multi-Mission Ocean Altimeters TOPEX/Poseidon, Jason-1, OSTM/Jason-2, Jason-3, and Sentinel-6A, Version 5.2 (NASA Goddard Space Flight Center)",
+  "citation": [
+    "GSFC. 2024. Global Mean Sea Level Trend from Integrated Multi-Mission Ocean Altimeters TOPEX/Poseidon, Jason-1, OSTM/Jason-2, Jason-3, and Sentinel-6A Version 5.2. PO.DAAC, CA, USA. https://doi.org/10.5067/GMSLM-TJ152",
+    "Beckley, B. D., et al. (2017). On the 'cal-mode' correction to TOPEX satellite altimetry and its effect on the global mean sea level time series. J. Geophys. Res. Oceans, 122. https://doi.org/10.1002/2017JC013090"
+  ],
+  "retrievedFrom": "https://github.com/NASA-GRACE/GRACE-Analysis-Tutorials/blob/b40eed27cbac8f860874592548ff8e240f4cadb2/GRACE_RESOURCES/GMSL_TPJAOS_5.2.txt",
+  "retrievalNote": "Copied from a NASA-GRACE GitHub repository because PO.DAAC and earth.gov were not reachable from the build environment. File header and DOI identify it as the official GSFC v5.2 product.",
+  "column": "12: smoothed GMSL, GIA applied, annual and semi-annual signals removed (mm)",
+  "processing": [
+    "Annual mean of the ~10-day satellite cycles in each calendar year.",
+    "Only complete years kept (1993\u20132024); 2025 is partial and left out.",
+    "Shown as change since the 1993 average, in centimetres."
+  ],
+  "years": [
+    1993,
+    2024
+  ]
+}

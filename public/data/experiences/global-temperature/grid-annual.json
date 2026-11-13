@@ -1,0 +1,26 @@
+{
+  "file": "grid-annual.bin",
+  "dtype": "int16-le",
+  "scale": 0.01,
+  "missing": -32768,
+  "units": "K anomaly relative to 1951\u20131980",
+  "shape": {
+    "year": 146,
+    "lat": 90,
+    "lon": 180
+  },
+  "order": "year, lat (south to north), lon (west to east)",
+  "lat": {
+    "first": -89.0,
+    "step": 2.0
+  },
+  "lon": {
+    "first": -179.0,
+    "step": 2.0
+  },
+  "years": [
+    1880,
+    2025
+  ],
+  "cellAnnualRule": "mean of monthly anomalies; requires >= 9 valid months, else missing"
+}

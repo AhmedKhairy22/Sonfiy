@@ -1,0 +1,48 @@
+{
+  "dataset": "NASA GISS Surface Temperature Analysis, version 4 (GISTEMP v4)",
+  "citation": [
+    "GISTEMP Team, 2026: GISS Surface Temperature Analysis (GISTEMP), version 4. NASA Goddard Institute for Space Studies. Dataset accessed 2026-11-11 at https://data.giss.nasa.gov/gistemp/.",
+    "Lenssen, N., G.A. Schmidt, M. Hendrickson, P. Jacobs, M. Menne, and R. Ruedy, 2024: A NASA GISTEMPv4 observational uncertainty ensemble. J. Geophys. Res. Atmos., 129, e2023JD040179, doi:10.1029/2023JD040179."
+  ],
+  "sourceFiles": [
+    {
+      "file": "GLB.Ts+dSST.csv",
+      "url": "https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv",
+      "used_for": "official global annual mean (J-D column)"
+    },
+    {
+      "file": "ZonAnn.Ts+dSST.csv",
+      "url": "https://data.giss.nasa.gov/gistemp/tabledata_v4/ZonAnn.Ts+dSST.csv",
+      "used_for": "latitude-band annual means (exported for a future experience; not yet used in sound or visuals)"
+    },
+    {
+      "file": "gistemp1200_GHCNv4_ERSSTv5.nc.gz",
+      "url": "https://data.giss.nasa.gov/pub/gistemp/gistemp1200_GHCNv4_ERSSTv5.nc.gz",
+      "used_for": "2x2 degree gridded monthly anomalies (1200 km smoothing)",
+      "history": "Created 2026-10-22 14:38:23 by SBBX_to_nc 2.0 - ILAND=1200, IOCEAN=NCDC/ER5, Base: 1951-1980"
+    }
+  ],
+  "baseline": "1951–1980",
+  "units": "°C (equivalently K) — anomalies, not absolute temperatures",
+  "years": [
+    1880,
+    2025
+  ],
+  "droppedPartialYears": [
+    2026
+  ],
+  "processing": [
+    "Kept complete calendar years only.",
+    "Global series uses NASA's published annual (J-D) values unchanged.",
+    "Grid annual mean = mean of a cell's monthly anomalies when >= 9 of 12 months exist; otherwise the cell is marked missing (never filled with 0).",
+    "Spatial variability = cos(latitude)-weighted standard deviation of the annual grid across cells with data.",
+    "Coverage = cos(latitude)-weighted fraction of the Earth's surface with data that year.",
+    "Grid values rounded to 0.01 K and stored as Int16."
+  ],
+  "scripts": [
+    "scripts/inspect_dataset.py",
+    "scripts/preprocess_temperature.py",
+    "scripts/generate_grid_json.py",
+    "scripts/validate_data.py"
+  ]
+}
